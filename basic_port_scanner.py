@@ -3,13 +3,13 @@
 import socket
 import termcolor
 
-
+# Scanning ports for a target.
 def scan(target, ports):
 	print('\n' + ' Starting Scan For ' + str(target))
 	for port in range(1,ports):
 		scan_port(target,port)
 
-
+# Checking weather port is open or not.
 def scan_port(ipaddress, port):
 	try:
 		sock = socket.socket()
@@ -20,6 +20,7 @@ def scan_port(ipaddress, port):
 		pass
 
 
+# Taking inputs for targets and number ports to scan.
 targets = input("[*] Enter Targets To Scan(split them by ,): ")
 ports = int(input("[*] Enter How Many Ports You Want To Scan: "))
 if ',' in targets:
